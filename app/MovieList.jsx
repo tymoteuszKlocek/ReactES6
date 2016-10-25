@@ -34,7 +34,7 @@ export default class MovieList extends React.Component {
         this.addToStorage({"Title":"Earth","Year":"2007","Rated":"G","Released":"22 Apr 2009","Runtime":"90 min","Genre":"Documentary","Director":"Alastair Fothergill, Mark Linfield","Writer":"Leslie Megahey (narration written by)","Actors":"Anggun, James Earl Jones, Patrick Stewart, Ulrich Tukur","Plot":"Feature-length version of the documentary TV series Planet Earth (2006), following the migration paths of four animal families.","Language":"English","Country":"UK, Germany, USA","Awards":"3 wins & 1 nomination.","Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwMzU5NDk3NF5BMl5BanBnXkFtZTcwOTM4MDUwMg@@._V1_SX300.jpg","Metascore":"72","imdbRating":"8.0","imdbVotes":"12,899","imdbID":"tt0393597","Type":"movie","Response":"True"});
         this.addToStorage({"Title":"Fire","Year":"1996","Rated":"UNRATED","Released":"22 Aug 1997","Runtime":"104 min","Genre":"Drama, Romance","Director":"Deepa Mehta","Writer":"Deepa Mehta","Actors":"Karishma Jhalani, Ramanjeet Kaur, Dilip Mehta, Javed Jaffrey","Plot":"Ashok runs a family business that sells takeout food that also has a video rental store at the side. Ashok's extended family includes his wife Radha, his brother Jatin, their ailing mother ...","Language":"English, Hindi","Country":"Canada, India","Awards":"7 wins & 1 nomination.","Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxNzc5MzU5NF5BMl5BanBnXkFtZTcwODYyNDYxMQ@@._V1_SX300.jpg","Metascore":"64","imdbRating":"7.3","imdbVotes":"4,800","imdbID":"tt0116308","Type":"movie","Response":"True"});
         this.addToStorage({"Title":"Water","Year":"2005","Rated":"PG-13","Released":"26 May 2006","Runtime":"117 min","Genre":"Drama, Romance","Director":"Deepa Mehta","Writer":"Anurag Kashyap (dialogue), Deepa Mehta","Actors":"Sarala Kariyawasam, Buddhi Wickrama, Rinsly Weerarathne, Iranganie Serasinghe","Plot":"The film examines the plight of a group of widows forced into poverty at a temple in the holy city of Varanasi. It focuses on a relationship between one of the widows, who wants to escape the social restrictions imposed on widows, and a man who is from the highest caste and a follower of Mahatma Gandhi.","Language":"Hindi, Sanskrit","Country":"Canada, India","Awards":"Nominated for 1 Oscar. Another 17 wins & 14 nominations.","Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMzIwOTk4Mzk4Nl5BMl5BanBnXkFtZTcwMjc1NTIzMQ@@._V1_SX300.jpg","Metascore":"77","imdbRating":"7.8","imdbVotes":"12,655","imdbID":"tt0240200","Type":"movie","Response":"True"});
-        this.addToStorage({"Title":"Wind","Year":"1992","Rated":"PG-13","Released":"11 Sep 1992","Runtime":"126 min","Genre":"Action, Drama, Sport","Director":"Carroll Ballard","Writer":"Jeff Benjamin (story), Roger Vaughan (story), Kimball Livingston (story), Rudy Wurlitzer (screenplay), Mac Gudgeon (screenplay)","Actors":"Matthew Modine, Jennifer Grey, Cliff Robertson, Jack Thompson","Plot":"Will Parker, played by Matthew Modine, loses the Americas Cup, the worlds biggest sailing prize, to the Australians and decides to form his own syndicate to win it back.","Language":"English","Country":"USA","Awards":"N/A","Poster":"http://ia.media-imdb.com/images/M/MV5BMTc5MDg0ODAwNl5BMl5BanBnXkFtZTcwOTUxMzQyMQ@@._V1_SX300.jpg","Metascore":"N/A","imdbRating":"6.4","imdbVotes":"2,019","imdbID":"tt0105824","Type":"movie","Response":"True"}); 
+        this.addToStorage({"Title":"City of God","Year":"2002","Rated":"R","Released":"13 Feb 2004","Runtime":"130 min","Genre":"Crime, Drama","Director":"Fernando Meirelles, Kátia Lund","Writer":"Paulo Lins (novel), Bráulio Mantovani (screenplay)","Actors":"Alexandre Rodrigues, Leandro Firmino, Phellipe Haagensen, Douglas Silva","Plot":"Two boys growing up in a violent neighborhood of Rio de Janeiro take different paths: one becomes a photographer, the other a drug dealer.","Language":"Portuguese","Country":"Brazil, France","Awards":"Nominated for 4 Oscars. Another 65 wins & 37 nominations.","Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4ODQ3ODkzNV5BMl5BanBnXkFtZTYwOTc4NDI3._V1_SX300.jpg","Metascore":"79","imdbRating":"8.7","imdbVotes":"540,033","imdbID":"tt0317248","Type":"movie","Response":"True"}); 
             alert("You've added 5 random movies.");
     }
 
@@ -115,7 +115,8 @@ export default class MovieList extends React.Component {
                                 return  (
                                     <li key={movie.Title}> {movie.Title} &emsp;
                                         <MyButton movieId={movie.imdbID} 
-                                                  searchById={searchById}>add to list</MyButton>
+                                                  searchById={searchById}
+                                                  onClick={searchById}>add to list</MyButton>
                                     </li>
                                 )
                             })
@@ -128,7 +129,7 @@ export default class MovieList extends React.Component {
                     movieArray.map(function(object, i) {
                         return <Movie 
                                     movieObj={object} 
-                                    key={object.Title} 
+                                    key={i} 
                                     movieIndex={i} 
                                     deleteMovie={deleteMovieItem} 
                                 />
