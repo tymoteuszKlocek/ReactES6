@@ -32,4 +32,9 @@ export default class Movie extends React.Component {
         )
     }
 }
- 
+
+Movie.propTypes = {
+    movieObj: React.PropTypes.object.isRequired,
+    deleteMovie: React.PropTypes.func.isRequired,
+    movieIndex: React.PropTypes.number.isRequired
+}

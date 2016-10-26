@@ -39,5 +39,5 @@ export default class MovieInfo extends React.Component {
 }
 
 MovieInfo.propTypes = {
-	movieObj: React.PropTypes.object.isRequired
+	movieObj: React.PropTypes.object.isRequired,
 }

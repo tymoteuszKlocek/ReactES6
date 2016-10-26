@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MovieList from './MovieList.jsx';
+import MovieListContainer from './MovieListContainer.jsx';
 
-
-ReactDOM.render(<MovieList />, document.getElementById('app'));
+ReactDOM.render(<MovieListContainer />, document.getElementById('app'));

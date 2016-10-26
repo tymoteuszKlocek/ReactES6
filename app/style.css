@@ -1,5 +1,9 @@
 body {
-		background: url('./assets/background.png');
+		background: #2E2E2E;
+		color: #FAFAFA;
 		padding: 10px;
 	}
-
+button, input {
+	color: #000000;
+}
+inpu
